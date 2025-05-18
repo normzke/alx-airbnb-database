@@ -1,12 +1,7 @@
-# Index Performance Report
+## Index Performance Analysis
 
-## Goal
-Improve performance of SELECT queries involving filters and joins on large tables by introducing appropriate indexes.
+### 🔍 Before Indexes
 
----
-
-## Before Indexing
-
-Sample query:
+Query:
 ```sql
-SELECT * FROM bookings WHERE user_id = 7;
+EXPLAIN ANALYZE SELECT * FROM bookings WHERE user_id = 2;

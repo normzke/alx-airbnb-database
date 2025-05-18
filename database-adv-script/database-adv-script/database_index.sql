@@ -1,11 +1,11 @@
--- Create indexes on frequently used columns to speed up WHERE, JOIN, and ORDER BY clauses
-
--- Index on user email for login or lookup
+-- Index on user email for quick lookups
 CREATE INDEX idx_users_email ON users(email);
 
--- Index on foreign keys in bookings for JOINs
+-- Index on booking user_id to optimize joins
 CREATE INDEX idx_bookings_user_id ON bookings(user_id);
+
+-- Index on booking property_id to speed up property lookups
 CREATE INDEX idx_bookings_property_id ON bookings(property_id);
 
--- Index on property city for filtering and ordering
+-- Index on property city to optimize location-based searches
 CREATE INDEX idx_properties_city ON properties(city);
